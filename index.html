@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Skills 开源合集 · GreenWich-art</title>
+<meta name="description" content="6 个即插即用的 AI Agent Skill：macOS 本地 OCR、GB/T 7714 参考文献核验、学术论文 docx 排版、PubMed 文献报告流水线、桌面 GUI 接管编排、PMC 开放获取文献下载。MIT 免费使用。">
+<meta property="og:title" content="Agent Skills 开源合集 · GreenWich-art">
+<meta property="og:description" content="6 个即插即用的 AI Agent Skill，支持 WorkBuddy / Claude Code / Codex 等宿主">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://greenwich-art.github.io/agent-skills">
+<style>
+  :root { --ink:#111; --gray:#666; --light:#999; --line:#e8e8e8; --accent:#0969da; --bg:#fff; --card:#fafafa; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.7; font-size:16px; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 20px 64px; }
+  .label { font-size:12px; letter-spacing:.25em; color:var(--light); text-transform:uppercase; }
+  h1 { font-size:34px; line-height:1.3; margin:14px 0 10px; letter-spacing:-.01em; }
+  .sub { color:var(--gray); font-size:17px; margin-bottom:28px; }
+  .cta { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:44px; }
+  .btn { display:inline-block; padding:10px 18px; border-radius:8px; text-decoration:none;
+         font-size:15px; border:1px solid var(--line); color:var(--ink); background:var(--card); }
+  .btn.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
+  h2 { font-size:21px; margin:44px 0 16px; padding-top:24px; border-top:1px solid var(--line); }
+  h2:first-of-type { border-top:none; padding-top:0; }
+  p { margin-bottom:12px; }
+  .muted { color:var(--gray); font-size:15px; }
+  .skill { border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:12px; background:var(--card); }
+  .skill .name { font-weight:600; font-size:16px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .skill .name .ver { font-size:12px; color:var(--light); font-weight:400; margin-left:8px; }
+  .skill .desc { color:var(--gray); font-size:14.5px; margin:4px 0 8px; }
+  .skill .links a { color:var(--accent); font-size:13.5px; text-decoration:none; margin-right:14px; }
+  .skill .links a:hover { text-decoration:underline; }
+  pre { background:#0d1117; color:#e6edf3; border-radius:8px; padding:14px 16px; overflow-x:auto;
+        font-size:13.5px; line-height:1.6; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  pre .c { color:#8b949e; }
+  table { width:100%; border-collapse:collapse; margin:12px 0 4px; font-size:14.5px; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); }
+  th { color:var(--gray); font-weight:500; font-size:13px; }
+  td code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; background:var(--card);
+            padding:2px 6px; border-radius:4px; border:1px solid var(--line); }
+  .faq details { border-bottom:1px solid var(--line); padding:12px 0; }
+  .faq summary { cursor:pointer; font-weight:500; font-size:15.5px; }
+  .faq .a { color:var(--gray); font-size:14.5px; margin-top:8px; }
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--light); font-size:13.5px; }
+  footer a { color:var(--accent); text-decoration:none; }
+  @media (max-width:520px){ h1{font-size:27px;} .wrap{padding:32px 16px 48px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="label">Open Source · Agent Skills</div>
+  <h1>6 个开源 Agent Skills<br>即装即用的 AI 技能合集</h1>
+  <p class="sub">OCR、参考文献核验、论文排版、文献流水线、桌面接管、文献下载——每个都是自包含的技能包，放进宿主 skills 目录即可使用。</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/GreenWich-art/agent-skills">📦 总库 GitHub</a>
+    <a class="btn" href="#install">⬇️ 怎么安装</a>
+  </div>
+
+  <h2>什么是 Agent Skill？</h2>
+  <p>Agent Skill 是一个装着「操作手册 + 脚本 + 资源」的文件夹（核心是其中的 <code>SKILL.md</code>）。AI Agent 读到对应任务时，会按手册里的流程和脚本自动完成——把一套反复要用的工作流固化一次，长期复用。</p>
+  <p class="muted">本合集遵循开放的 Agent Skills 规范，不绑定单一产品。</p>
+
+  <h2>适合谁</h2>
+  <p class="muted">使用 WorkBuddy / Claude Code / Codex / Cursor 等 AI Agent 的开发者与研究者；需要本地 OCR、论文排版、文献检索下载、桌面自动化等具体能力的人。不适合：完全不用 AI Agent 的普通用户。</p>
+
+  <h2>6 个技能</h2>
+
+  <div class="skill">
+    <div class="name">macos-vision-ocr <span class="ver">v2.1.0</span></div>
+    <div class="desc">调用 macOS 内置 Vision 框架的完全本地 OCR：免费、离线、零依赖，支持竖排检测、方向纠正、小图放大。</div>
+    <div class="links"><a href="https://github.com/GreenWich-art/skill-macos-vision-ocr">子库</a><a href="https://github.com/GreenWich-art/skill-macos-vision-ocr/releases/latest">下载 zip</a></div>
+  </div>
+  <div class="skill">
+    <div class="name">gbt7714-reference-check <span class="ver">v1.0.0</span></div>
+    <div class="desc">参考文献 GB/T 7714-2015 著录规范化，URL/DOI/PMID/PMC 链接批量核验，区分「真死链」与「被反爬」。</div>
+    <div class="links"><a href="https://github.com/GreenWich-art/skill-gbt7714-reference-check">子库</a><a href="https://github.com/GreenWich-art/skill-gbt7714-reference-check/releases/latest">下载 zip</a></div>
+  </div>
+  <div class="skill">
+    <div class="name">docx-academic-format <span class="ver">v1.0.0</span></div>
+    <div class="desc">中文学术论文 docx 批量排版：三线表（1/8 磅）、统计量斜体、中西文混排字体四槽位，附生成后自检。</div>
+    <div class="links"><a href="https://github.com/GreenWich-art/skill-docx-academic-format">子库</a><a href="https://github.com/GreenWich-art/skill-docx-academic-format/releases/latest">下载 zip</a></div>
+  </div>
+  <div class="skill">
+    <div class="name">pubmed-lit-report <span class="ver">v1.0.1</span></div>
+    <div class="desc">PubMed/EuropePMC 检索 → 单文件双语 HTML 报告 → OA PDF 下载 → 7 项质量门禁，一站式流水线。</div>
+    <div class="links"><a href="https://github.com/GreenWich-art/skill-pubmed-lit-report">子库</a><a href="https://github.com/GreenWich-art/skill-pubmed-lit-report/releases/latest">下载 zip</a></div>
+  </div>
+  <div class="skill">
+    <div class="name">desktop-takeover <span class="ver">v1.3.1</span></div>
+    <div class="desc">桌面 GUI 操作统一编排：五级路由决策、macOS 授权引导、任务三段式派发、AX 兜底工具。</div>
+    <div class="links"><a href="https://github.com/GreenWich-art/skill-desktop-takeover">子库</a><a href="https://github.com/GreenWich-art/skill-desktop-takeover/releases/latest">下载 zip</a></div>
+  </div>
+  <div class="skill">
+    <div class="name">pmc-oa-pdf-fetch <span class="ver">v1.0.0</span></div>
+    <div class="desc">开放获取文献 PDF 与补充材料下载：EuropePMC → Unpaywall → PMC PoW 离线求解 → 出版社直链，逐级降级。</div>
+    <div class="links"><a href="https://github.com/GreenWich-art/skill-pmc-oa-pdf-fetch">子库</a><a href="https://github.com/GreenWich-art/skill-pmc-oa-pdf-fetch/releases/latest">下载 zip</a></div>
+  </div>
+
+  <h2 id="install">怎么安装</h2>
+  <p><strong>方式一：npx skills CLI（推荐）</strong>——自动识别 69+ 种 Agent 宿主，一条命令装单个技能：</p>
+  <pre><span class="c"># 装单个技能（以 OCR 为例，换成其他名字即可）</span>
+npx skills add GreenWich-art/skill-macos-vision-ocr
+
+<span class="c"># 装到用户级目录（跨项目可用）</span>
+npx skills add GreenWich-art/skill-macos-vision-ocr -g</pre>
+
+  <p style="margin-top:16px"><strong>方式二：下载 zip 手动安装</strong>——打开上面任一技能的「下载 zip」（或各子库 Releases 页面），解压后把技能文件夹放进宿主的 skills 目录：</p>
+  <table>
+    <tr><th>宿主</th><th>用户级目录（所有项目可用）</th></tr>
+    <tr><td>WorkBuddy</td><td><code>~/.workbuddy/skills/</code></td></tr>
+    <tr><td>Claude Code</td><td><code>~/.claude/skills/</code></td></tr>
+    <tr><td>Codex</td><td><code>~/.codex/skills/</code></td></tr>
+  </table>
+  <p class="muted" style="margin-top:8px">注意：解压后应是 <code>skills/&lt;技能名&gt;/SKILL.md</code> 这一层，不要多套目录。公开仓库的 zip 无需登录即可下载。</p>
+
+  <p style="margin-top:16px"><strong>方式三：Claude Code 插件市场</strong>：</p>
+  <pre>/plugin marketplace add GreenWich-art/agent-skills</pre>
+  <p class="muted">然后在 Claude Code 里按名字安装单个技能插件。</p>
+
+  <h2>常见问题</h2>
+  <div class="faq">
+    <details><summary>下载 zip 需要登录 GitHub 吗？</summary><div class="a">不需要。仓库和 Release 资产均为公开，直接下载。</div></details>
+    <details><summary>装完怎么用？</summary><div class="a">直接对 Agent 描述任务即可，技能会按 SKILL.md 里的触发词自动激活；也可以显式点名，如「用 macos-vision-ocr 识别这张图」。</div></details>
+    <details><summary>支持 Windows / Linux 吗？</summary><div class="a">除 macos-vision-ocr（依赖 macOS 系统框架）和 desktop-takeover（仅验证 macOS）外，其余技能跨平台可用；各自的 README 里有说明。</div></details>
+    <details><summary>收费吗？可以商用吗？</summary><div class="a">MIT License，免费使用、可修改、可商用，保留作者署名即可。</div></details>
+    <details><summary>想贡献或报问题？</summary><div class="a">请到总库 <a href="https://github.com/GreenWich-art/agent-skills" style="color:var(--accent)">GreenWich-art/agent-skills</a> 提 Issue / PR；各子库是自动镜像，只读。</div></details>
+  </div>
+
+  <footer>
+    <p>MIT License · Copyright (c) 2026 冯金岳 (Feng Jinyue)</p>
+    <p><a href="https://github.com/GreenWich-art/agent-skills">总库</a> · <a href="https://github.com/GreenWich-art">@GreenWich-art</a> · 本页面由 GitHub Pages 托管</p>
+  </footer>
+
+</div>
+</body>
+</html>

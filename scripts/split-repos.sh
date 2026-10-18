@@ -52,7 +52,7 @@ for d in skills/*/; do
     # 2b. subtree split（先删旧分支保证幂等）
     git branch -D "split/$name" >/dev/null 2>&1 || true
     git subtree split --prefix="skills/$name" -b "split/$name" >/dev/null
-    echo "  已生成 split/$name（仅含 skills/$name 的历史）"
+    echo "  已生成 split/${name}（仅含 skills/${name} 的历史）"
 
     # 2c. 推送为子库 main（-f：镜像语义，允许历史重写）
     git push -f "https://github.com/$OWNER/$repo.git" "split/$name:main" >/dev/null 2>&1 \

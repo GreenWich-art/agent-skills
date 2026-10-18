@@ -1,0 +1,7 @@
+# macOS / 编辑器 / 构建产物
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+.idea/
+.vscode

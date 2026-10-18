@@ -1,0 +1,42 @@
+{
+  "name": "fengjinyue-agent-skills",
+  "owner": {
+    "name": "冯金岳 (Feng Jinyue)"
+  },
+  "metadata": {
+    "description": "Agent Skill 合集：macOS 本地 OCR、GB/T 7714 参考文献核验、学术 docx 排版、PubMed 文献报告流水线、桌面 GUI 接管编排、PMC OA 文献下载",
+    "license": "MIT"
+  },
+  "plugins": [
+    {
+      "name": "macos-vision-ocr",
+      "source": "./skills/macos-vision-ocr",
+      "description": "macOS 内置 Vision 框架本地 OCR：免费、离线、零依赖，支持竖排检测、方向纠正与小图放大"
+    },
+    {
+      "name": "gbt7714-reference-check",
+      "source": "./skills/gbt7714-reference-check",
+      "description": "GB/T 7714-2015 参考文献著录规范化与 URL/DOI/PMID/PMC 链接批量核验，区分真死链与反爬"
+    },
+    {
+      "name": "docx-academic-format",
+      "source": "./skills/docx-academic-format",
+      "description": "中文学术论文 docx 批量排版：三线表、统计量斜体、中西文混排字体四槽位"
+    },
+    {
+      "name": "pubmed-lit-report",
+      "source": "./skills/pubmed-lit-report",
+      "description": "PubMed/EuropePMC 检索到双语 HTML 报告与 OA PDF 下载的一站式流水线，含 7 项质量门禁"
+    },
+    {
+      "name": "desktop-takeover",
+      "source": "./skills/desktop-takeover",
+      "description": "桌面 GUI 操作统一编排：五级路由决策、macOS 授权引导、任务三段式派发与 AX 兜底工具"
+    },
+    {
+      "name": "pmc-oa-pdf-fetch",
+      "source": "./skills/pmc-oa-pdf-fetch",
+      "description": "开放获取文献 PDF 与补充材料下载，含 PMC PoW 离线求解与出版社拦截绕行"
+    }
+  ]
+}

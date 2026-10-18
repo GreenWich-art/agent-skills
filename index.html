@@ -96,7 +96,23 @@ npx skills add GreenWich-art/skill-macos-vision-ocr
   <p class="muted">本合集遵循开放的 Agent Skills 规范，不绑定单一产品。</p>
 
   <h2>适合谁</h2>
-  <p class="muted">在电脑上使用 AI Agent 的开发者与研究者：WorkBuddy、Claude Code、Codex、Cursor 等宿主的用户，需要本地 OCR、论文排版、文献检索下载、桌面自动化等具体能力的人。技能需安装到本地 skills 目录使用，因此目标用户是桌面端；不适合完全不用 AI Agent 的用户。</p>
+  <p><strong>在电脑上使用 AI Agent 的开发者与研究者。</strong></p>
+  <p class="muted">用 WorkBuddy、Claude Code、Codex、Cursor 等任一宿主，且需要本地 OCR、论文排版、文献检索下载、桌面自动化这类具体能力的人，装完就能用。技能需安装到本地 skills 目录（桌面端）；如果你完全不用 AI Agent，这个合集帮不上你。</p>
+
+  <h2>适用场景</h2>
+  <p class="muted" style="margin-bottom:14px">真实任务，对号入座：</p>
+  <table>
+    <tr><th>你遇到的情况</th><th>用哪个</th></tr>
+    <tr><td>导师发来课件照片或扫描件，要把里面的文字、表格数据提取进电脑</td><td><code>macos-vision-ocr</code></td></tr>
+    <tr><td>截图内容要转文字，但数据敏感、不能上云</td><td><code>macos-vision-ocr</code></td></tr>
+    <tr><td>论文/综述要交了，逐条核对参考文献著录格式是否符合国标</td><td><code>gbt7714-reference-check</code></td></tr>
+    <tr><td>怕参考文献里的 DOI/链接失效，交稿前批量验活</td><td><code>gbt7714-reference-check</code></td></tr>
+    <tr><td>Markdown 写好的文章，要按学术规范排成 docx（三线表、P 值斜体、Times New Roman）</td><td><code>docx-academic-format</code></td></tr>
+    <tr><td>要调研某个关键词或某位作者的文献，出一份带中文对照的报告</td><td><code>pubmed-lit-report</code></td></tr>
+    <tr><td>看中的文献要下 PDF，直链 403/404，或被 PMC 验证页拦住</td><td><code>pmc-oa-pdf-fetch</code></td></tr>
+    <tr><td>某个软件只有图形界面，想让 AI 帮你改设置、点按钮、填表单</td><td><code>desktop-takeover</code></td></tr>
+    <tr><td>AI 说"点完了"，你要截图证据确认它真的点对了</td><td><code>desktop-takeover</code></td></tr>
+  </table>
 
   <h2>6 个技能</h2>
 

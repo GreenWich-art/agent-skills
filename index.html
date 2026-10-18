@@ -9,21 +9,40 @@
 <meta property="og:description" content="6 个即插即用的 AI Agent Skill，支持 WorkBuddy / Claude Code / Codex 等宿主">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://greenwich-art.github.io/agent-skills">
+<meta name="theme-color" content="#FAF9F7">
 <style>
-  :root { --ink:#111; --gray:#666; --light:#999; --line:#e8e8e8; --accent:#0969da; --bg:#fff; --card:#fafafa; }
+  :root {
+    --ink:#1F1B16;      /* 墨色暖黑 */
+    --gray:#6B655C;     /* 暖灰 */
+    --light:#9A938A;    /* 弱暖灰 */
+    --line:#E7E2D9;     /* 暖分隔线 */
+    --accent:#A63A2B;   /* 朱砂（唯一强调色） */
+    --bg:#FAF9F7;       /* 暖白纸底 */
+    --card:#F3F0EA;     /* 卡片底 */
+    --paper:#FAF9F7;
+    --code-bg:#221E1A;  /* 暖深代码底 */
+    --code-fg:#EDE6DA;
+    --code-c:#8F867A;
+  }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-         background:var(--bg); color:var(--ink); line-height:1.7; font-size:16px; }
+         background:var(--bg); color:var(--ink); line-height:1.75; font-size:16px;
+         border-top:3px solid var(--accent); }
   .wrap { max-width:800px; margin:0 auto; padding:52px 24px 72px; }
   .label { font-size:12px; letter-spacing:.25em; color:var(--light); text-transform:uppercase; }
-  h1 { font-size:34px; line-height:1.3; margin:14px 0 10px; letter-spacing:-.01em; }
+  h1 { font-family:"Songti SC","STSong","SimSun","Noto Serif SC",serif;
+       font-size:36px; font-weight:600; line-height:1.35; margin:14px 0 12px; letter-spacing:.01em; }
   .sub { color:var(--gray); font-size:17px; margin-bottom:28px; }
   .cta { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:44px; }
   .btn { display:inline-block; padding:10px 18px; border-radius:8px; text-decoration:none;
          font-size:15px; border:1px solid var(--line); color:var(--ink); background:var(--card); }
-  .btn.primary { background:var(--ink); color:#fff; border-color:var(--ink); }
-  h2 { font-size:21px; margin:44px 0 16px; padding-top:24px; border-top:1px solid var(--line); }
+  .btn.primary { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .btn:hover { border-color:var(--accent); color:var(--accent); }
+  .btn.primary:hover { background:var(--accent); border-color:var(--accent); color:#fff; }
+  h2 { font-size:21px; font-weight:600; margin:46px 0 16px; padding-top:26px; border-top:1px solid var(--line); }
   h2:first-of-type { border-top:none; padding-top:0; }
+  h2::before { content:""; display:inline-block; width:9px; height:9px;
+               background:var(--accent); margin-right:10px; vertical-align:2px; }
   p { margin-bottom:12px; }
   .muted { color:var(--gray); font-size:15px; }
   .skill { border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:12px; background:var(--card); }
@@ -32,9 +51,9 @@
   .skill .desc { color:var(--gray); font-size:14.5px; margin:4px 0 8px; }
   .skill .links a { color:var(--accent); font-size:13.5px; text-decoration:none; margin-right:14px; }
   .skill .links a:hover { text-decoration:underline; }
-  pre { background:#0d1117; color:#e6edf3; border-radius:8px; padding:14px 16px; overflow-x:auto;
-        font-size:13.5px; line-height:1.6; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
-  pre .c { color:#8b949e; }
+  pre { background:var(--code-bg); color:var(--code-fg); border-radius:8px; padding:14px 16px; overflow-x:auto;
+        font-size:13.5px; line-height:1.7; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  pre .c { color:var(--code-c); }
   table { width:100%; border-collapse:collapse; margin:12px 0 4px; font-size:14.5px; }
   th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); }
   th { color:var(--gray); font-weight:500; font-size:13px; }
@@ -42,10 +61,12 @@
             padding:2px 6px; border-radius:4px; border:1px solid var(--line); }
   .faq details { border-bottom:1px solid var(--line); padding:12px 0; }
   .faq summary { cursor:pointer; font-weight:500; font-size:15.5px; }
+  .faq summary::marker { color:var(--accent); }
   .faq .a { color:var(--gray); font-size:14.5px; margin-top:8px; }
+  .faq .a a, p a { color:var(--accent); }
   footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--light); font-size:13.5px; }
   footer a { color:var(--accent); text-decoration:none; }
-  @media (max-width:520px){ h1{font-size:27px;} .wrap{padding:32px 16px 48px;} }
+  @media (max-width:520px){ h1{font-size:28px;} .wrap{padding:36px 16px 52px;} }
 </style>
 </head>
 <body>

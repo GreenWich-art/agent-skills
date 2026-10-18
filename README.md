@@ -2,7 +2,7 @@
 
 冯金岳（Feng Jinyue）的 Agent Skill 合集。每个 skill 都是自包含的文件夹（`SKILL.md` + 脚本/参考/资源），遵循开放的 [Agent Skills 规范](https://agentskills.io)——同一份 skill 可在 WorkBuddy、Claude Code、Codex、Cursor 等支持该规范的宿主中使用。
 
-> 🌐 移动端友好的介绍页（适合分享给手机用户）：**https://greenwich-art.github.io/agent-skills**
+> 🌐 项目介绍与安装指南页（GitHub Pages）：**https://greenwich-art.github.io/agent-skills**
 
 ## Skill 索引
 
